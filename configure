@@ -1,0 +1,10 @@
+--prefix=/usr/share/postgresql9
+--bindir=/usr/libexec/postgresql9
+--sysconfdir=/etc/postgresql9
+--datadir=/usr/share/postgresql9
+--includedir=/usr/include/postgresql9
+--libdir=/usr/lib64/postgresql9
+--with-includes=/usr/include/readline/
+--with-openssl
+--with-pam
+--without-python

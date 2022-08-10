@@ -1,0 +1,15 @@
+# This file contains additional build requirements that did not get
+# picked up automatically. One name per line, no whitespace.
+Linux-PAM-dev
+bison
+flex
+libxml2-dev
+libxslt-bin
+ncurses-dev
+openjade-dev
+openssl-dev
+perl(IPC::Run)
+python3-dev
+readline-dev
+systemd-dev
+zlib-dev
