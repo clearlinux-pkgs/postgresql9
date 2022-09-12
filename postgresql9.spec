@@ -4,7 +4,7 @@
 #
 Name     : postgresql9
 Version  : 9.6.24
-Release  : 1
+Release  : 2
 URL      : https://ftp.postgresql.org/pub/source/v9.6.24/postgresql-9.6.24.tar.gz
 Source0  : https://ftp.postgresql.org/pub/source/v9.6.24/postgresql-9.6.24.tar.gz
 Summary  : No detailed summary available
