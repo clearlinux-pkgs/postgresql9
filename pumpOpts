@@ -1,1 +1,2 @@
+alias = postgresql
 regex = ^9\..*$
