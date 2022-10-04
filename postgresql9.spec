@@ -4,7 +4,7 @@
 #
 Name     : postgresql9
 Version  : 9.6.24
-Release  : 2
+Release  : 3
 URL      : https://ftp.postgresql.org/pub/source/v9.6.24/postgresql-9.6.24.tar.gz
 Source0  : https://ftp.postgresql.org/pub/source/v9.6.24/postgresql-9.6.24.tar.gz
 Summary  : No detailed summary available
@@ -97,15 +97,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1660153066
+export SOURCE_DATE_EPOCH=1664916232
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -fstack-protector-strong -fzero-call-used-regs=used -mprefer-vector-width=256 "
-export FCFLAGS="$FFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -fstack-protector-strong -fzero-call-used-regs=used -mprefer-vector-width=256 "
-export FFLAGS="$FFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -fstack-protector-strong -fzero-call-used-regs=used -mprefer-vector-width=256 "
-export CXXFLAGS="$CXXFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -fstack-protector-strong -fzero-call-used-regs=used -mprefer-vector-width=256 "
+export CFLAGS="$CFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -mprefer-vector-width=256 "
+export FCFLAGS="$FFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -mprefer-vector-width=256 "
+export FFLAGS="$FFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -mprefer-vector-width=256 "
+export CXXFLAGS="$CXXFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -mprefer-vector-width=256 "
 %configure --disable-static --prefix=/usr/share/postgresql9 \
 --bindir=/usr/libexec/postgresql9 \
 --sysconfdir=/etc/postgresql9 \
@@ -119,11 +119,11 @@ export CXXFLAGS="$CXXFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -fl
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1660153066
+export SOURCE_DATE_EPOCH=1664916232
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/postgresql9
-cp %{_builddir}/postgresql-%{version}/COPYRIGHT %{buildroot}/usr/share/package-licenses/postgresql9/b65c2d5331bc4d97b4b88e5a0cbf98c0452ea8d7
-cp %{_builddir}/postgresql-%{version}/src/backend/regex/COPYRIGHT %{buildroot}/usr/share/package-licenses/postgresql9/9ca05e9c70d9823e191d9b3876ecdeb57c53c725
+cp %{_builddir}/postgresql-%{version}/COPYRIGHT %{buildroot}/usr/share/package-licenses/postgresql9/b65c2d5331bc4d97b4b88e5a0cbf98c0452ea8d7 || :
+cp %{_builddir}/postgresql-%{version}/src/backend/regex/COPYRIGHT %{buildroot}/usr/share/package-licenses/postgresql9/9ca05e9c70d9823e191d9b3876ecdeb57c53c725 || :
 %make_install
 
 %files
